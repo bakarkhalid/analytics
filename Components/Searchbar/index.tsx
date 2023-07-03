@@ -6,21 +6,19 @@ interface ISearchbar{
     text: ReactElement | ReactNode | string,
     className?: string;
     placeholder: string;
-    searchimg: string;
-    image: string;
-    type?: string;
+    type: string;
 }
 
-const Searchbar: React.FC<ISearchbar> = ({text, placeholder, type, image, className}) => {
+const Searchbar: React.FC<ISearchbar> = ({text, placeholder, type, className}) => {
     return (
         <div  className={`bar-holder ${className}`}>
             <p>{text}</p>
             <div className="field-holder">
                 <Input 
-                    placeholder="Type in a keyword to begin search"
-                    type="text"
+                    placeholder={placeholder}
+                    type={type}
                 />
-                <button><SearchIcon/></button>
+                <button><SearchIcon/></button> 
             </div>
         </div>
     );
