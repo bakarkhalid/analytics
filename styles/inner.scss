@@ -1,0 +1,40 @@
+.bar-holder {
+    text-align: center;
+    background-color: #1E1E1E;
+    padding: 30px 0;
+
+    p {
+        font-size: 22px;
+        font-weight: 600;
+        margin: 0 0 8px;
+        color: #fff;
+    }
+}
+
+.field-holder {
+    max-width: 740px;
+    margin: 0 auto;
+    position: relative;
+    color: #fff;
+
+    button {
+        background-color: #AF9E2A;
+        width: 55px;
+        height: 59px;
+        border-top-right-radius: 6px;
+        border-bottom-right-radius: 6px;
+        outline: none;
+        border: 1px solid #AF9E2A;
+        position: absolute;
+        right: 1px;
+        top: 1px;
+
+        svg {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+    }
+}
