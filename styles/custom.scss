@@ -18,7 +18,7 @@ img {
     color: #fff;
     text-align: center;
     padding: 23px 0;
-    z-index: 1;
+    z-index: 5;
     position: relative;
 
     @media (max-width: 576px) {
@@ -363,49 +363,55 @@ img {
     }
 }
 
-Table {
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    border-collapse: collapse;
-    box-sizing: border-box;
+.rc-table-content {
     overflow: auto;
-    min-width: 992px;
+}
 
-    .rc-table-thead {
-        background-color: #4D4D4D;
-        color: #fff;
-        border: none;
+.rc-table{
+    table {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        border-collapse: collapse;
+        box-sizing: border-box;
+        min-width: 992px;
 
-        .rc-table-cell {
-            padding: 10px 0;
-            font-size: 18px;
-            line-height: 21px;
-            font-weight: 700;
-        }
-    }
-
-    .rc-table-tbody {
-        text-align: center;
-
-
-        .rc-table-row {
-            background-color: rgba(57, 57, 57, 0.5);
+        .rc-table-thead {
+            background-color: #4D4D4D;
             color: #fff;
-            font-size: 18px;
-            line-height: 21px;
-            font-weight: 400;
+            border: none;
 
-            &:nth-child(odd) {
-                background-color: rgba(38, 38, 38, 0.5);
+            .rc-table-cell {
+                padding: 10px 0;
+                font-size: 18px;
+                line-height: 21px;
+                font-weight: 700;
             }
         }
 
-        .rc-table-cell {
-            padding: 8px 0;
+        .rc-table-tbody {
+            text-align: center;
+
+
+            .rc-table-row {
+                background-color: rgba(57, 57, 57, 0.5);
+                color: #fff;
+                font-size: 18px;
+                line-height: 21px;
+                font-weight: 400;
+
+                &:nth-child(odd) {
+                    background-color: rgba(38, 38, 38, 0.5);
+                }
+            }
+
+            .rc-table-cell {
+                padding: 8px 0;
+            }
         }
     }
 }
+
 
 .result-wrap {
     padding: 0 50px 34px;
@@ -478,7 +484,7 @@ Table {
     background: #2a2a2a;
     color: #fff;
     text-align: center;
-    z-index: 1;
+    z-index: 5;
     position: relative;
 
     p {

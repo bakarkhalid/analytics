@@ -1,18 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import Input from "../Input";
 import Button from "../Button";
 import { AddEye } from "@/icons";
 import Link from "next/link";
 
 const SignUp = () => {
+  const [cred, setCred] = useState({
+    username: '',
+    email: '',
+    password: '',
+    confrimPassword: ''
+  })
   return (
     <div className="form">
       <form className="form-area">
         <div className="form-block">
-          <Input name="Username" type="text" placeholder="Username" />
-          <Input name="Email" type="email" placeholder="Email" />
+          <Input value={cred.username} onChange={(e) => setCred({ ...cred, username: e.target.value })} name="Username" type="text" placeholder="Username" />
+          <Input value={cred.email} onChange={(e) => setCred({ ...cred, email: e.target.value })} name="Email" type="email" placeholder="Email" />
           <div className="password">
             <Input
+              value={cred.password} onChange={(e) => setCred({ ...cred, password: e.target.value })}
               name="Password"
               type="password"
               placeholder="password"
@@ -27,6 +34,7 @@ const SignUp = () => {
           </div>
           <div className="password">
             <Input
+              value={cred.confrimPassword} onChange={(e) => setCred({ ...cred, confrimPassword: e.target.value })}
               name="Confirm Password"
               type="password"
               placeholder="Confirm your password"

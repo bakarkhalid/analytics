@@ -7,9 +7,11 @@ interface ISearchbar {
     className?: string;
     placeholder: string;
     type: string;
+    value?: string
+    changeHandler?: any
 }
 
-const Searchbar: React.FC<ISearchbar> = ({ text, placeholder, type, className }) => {
+const Searchbar: React.FC<ISearchbar> = ({ text, placeholder, type, className, value, changeHandler }) => {
     return (
         <div className={`bar-holder ${className}`}>
             <p>{text}</p>
@@ -17,6 +19,8 @@ const Searchbar: React.FC<ISearchbar> = ({ text, placeholder, type, className })
                 <Input
                     placeholder={placeholder}
                     type={type}
+                    value={value}
+                    onChange={(e: any) => changeHandler(e.target.value)}
                 />
                 <button><SearchIcon /></button>
             </div>

@@ -30,61 +30,70 @@ const Mainn: React.FC<Main> = ({ selectedOption }) => {
         <>
             <div className='chose-file-area'>
                 <div className='section-block'>
+                    <div className='section-block-heading'>
+                        <h2>Telegram Chat</h2>
+                    </div>
                     <span className='detail-number'>Upload Telegram Chat</span>
                     <div className="col">
                         <div className='document-block'>
                             <div className='upload-file'>
                                 <label htmlFor="premiumPhoto1" className='label'>
                                     <input className='inputHide' id="premiumPhoto1" type='file' onChange={(e) => handleImage(e, "first")} />
-                                    {firstImage ? <img src={firstImage} /> : 
+                                    {firstImage ? <img src={firstImage} /> :
                                         <div className="file-area">
-                                        <div className="file-image">
-                                            <img src="assets/images/document-file.png" alt="document-file" />
+                                            <div className="file-image">
+                                                <img src="assets/images/document-file.png" alt="document-file" />
+                                            </div>
+                                            <p>drag or click to select file</p>
                                         </div>
-                                        <p>drag or click to select file</p>
-                                    </div>
                                     }
-                                
+
                                 </label>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div className='section-block'>
-                    <span className='detail-number'>Upload Telegram Chatjjj</span>
+                    <div className='section-block-heading'>
+                        <h2>Whatsapp Chat</h2>
+                    </div>
+                    <span className='detail-number'>Upload Whatsapp Chat</span>
                     <div className="col">
                         <div className='document-block'>
                             <div className='upload-file'>
                                 <label htmlFor="premiumPhoto2" className='label'>
                                     <input className='inputHide' id="premiumPhoto2" type='file' onChange={(e) => handleImage(e, "second")} />
-                                    {secondImage ? <img src={secondImage} /> :   <div className="file-area">
+                                    {secondImage ? <img src={secondImage} /> : <div className="file-area">
                                         <div className="file-image">
                                             <img src="assets/images/document-file.png" alt="document-file" />
                                         </div>
                                         <p>drag or click to select file</p>
-                                    </div> }
-                                 
+                                    </div>}
+
                                 </label>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div className='section-block'>
-                    <span className='detail-number'>Upload Telegram Chat</span>
+                    <div className='section-block-heading'>
+                        <h2>Email Upload</h2>
+                    </div>
+                    <span className='detail-number'>Upload Your Emails</span>
                     <div className="col">
                         <div className='document-block'>
                             <div className='upload-file'>
                                 <label htmlFor="premiumPhoto3" className='label'>
                                     <input className='inputHide' id="premiumPhoto3" type='file' onChange={(e) => handleImage(e, "third")} />
-                                    {thirdImage ? <img src={thirdImage} /> : 
-                                      <div className="file-area">
-                                      <div className="file-image">
-                                          <img src="assets/images/document-file.png" alt="document-file" />
-                                      </div>
-                                      <p>drag or click to select file</p>
-                                  </div>
+                                    {thirdImage ? <img src={thirdImage} /> :
+                                        <div className="file-area">
+                                            <div className="file-image">
+                                                <img src="assets/images/document-file.png" alt="document-file" />
+                                            </div>
+                                            <p>drag or click to select file</p>
+                                        </div>
                                     }
-                                  
+
                                 </label>
                             </div>
                         </div>
