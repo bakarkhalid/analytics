@@ -31,6 +31,7 @@ const SideBar: React.FC<ISideBar> = ({ sideBarName, uploadFile, searchArea, anal
     };
 
     return (
+        <>
         <div className='analytic-side-bar'>
             <div className='harmburger-menu'>
                 <FontAwesomeIcon icon={faBars} onClick={() => setMobileMenu(!mobileMenu)} />
@@ -47,6 +48,7 @@ const SideBar: React.FC<ISideBar> = ({ sideBarName, uploadFile, searchArea, anal
                 </ul>
             </div>
         </div>
+        </>
     )
 }
 

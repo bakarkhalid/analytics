@@ -8,7 +8,7 @@ import Link from "next/link";
 import ParentComponent from "@/Components/ParentPagination";
 import SideBar from "@/Components/SideBar";
 
-const table = () => {
+const Table = () => {
   const columns = [
     {
       title: "Keyword",
@@ -90,37 +90,24 @@ const table = () => {
   ];
   return (
     <>
-      <Header isLogged />
       <div className="main table-block">
-        <div className="search-wrap">
-          <SideBar
-            sideBarName="Welcome back @username"
-            uploadFile="Upload"
-            searchArea="Search"
-            analyticsArea="Analytics"
-          />
-          <div className="right-area table-area">
-            <Searchbar type="text" placeholder="LordBGR" text="Search" />
-            <div className="result-wrap">
-              <div className="result-area">
-                <div className="text-area">
-                  <p>Search Results for “Keyword”</p>
-                </div>
-                <div className="icon-area">
-                  <Link href="#">
-                    <ResultIcon />
-                  </Link>
-                </div>
-              </div>
-              <GenericTable columns={columns} data={data} />
-              <ParentComponent />
+        <div className="result-wrap">
+          <div className="result-area">
+            <div className="text-area">
+              <p>Search Results for “Keyword”</p>
+            </div>
+            <div className="icon-area">
+              <Link href="#">
+                <ResultIcon />
+              </Link>
             </div>
           </div>
+          <GenericTable columns={columns} data={data} />
+          <ParentComponent />
         </div>
       </div>
-      <Footer />
     </>
   );
 };
 
-export default table;
+export default Table;

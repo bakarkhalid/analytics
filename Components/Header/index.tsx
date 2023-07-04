@@ -20,7 +20,7 @@ const Header: React.FC<Iprops> = ({ isLogged = false, text, image, placeholder})
             <span className="logo-text">Elite Link</span>
           </Link>
         </strong>
-        {isLogged && <Button text={<><UserIcon />@admin_username</>} />}
+        {isLogged && <Button text={<><UserIcon />@username</>} />}
       </div>
     </div>
   );
