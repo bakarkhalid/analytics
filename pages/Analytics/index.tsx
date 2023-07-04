@@ -6,12 +6,12 @@ import React from 'react'
 const Analytics = () => {
   return (
     <div className=''>
-            <Header isLogged />
-            <div className='main-area'>
-                <SideBar sideBarName='Welcome back @username' uploadFile='Upload' searchArea='Search' analyticsArea='Analytics' />
-            </div>
-            <Footer />
-        </div>
+      <Header isLogged />
+      <div className='main-area'>
+        <SideBar sideBarName='Welcome back @username' uploadFile='Upload' searchArea='Search' analyticsArea='Analytics' />
+      </div>
+      <Footer />
+    </div>
   )
 }
 

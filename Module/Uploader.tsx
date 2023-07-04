@@ -8,6 +8,7 @@ interface UploaderProps {
 }
 
 const Uploader: React.FC<UploaderProps> = ({ name, onSelectedFilesChange, selectedFiles }) => {
+  console.log(name)
   // const [selectedFiles, setSelectedFiles] = useState<File[]>([]);
   const handleFileSelect = (event: React.ChangeEvent<HTMLInputElement>) => {
     // const files = event.target.files;
@@ -47,20 +48,18 @@ const Uploader: React.FC<UploaderProps> = ({ name, onSelectedFilesChange, select
           </div>}
 
           <div className='input-field'>
-            <input type="file" multiple id="premiumPhoto" onChange={handleFileSelect} />
+            <input type="file" id="premiumPhoto" onChange={handleFileSelect} />
           </div>
           <div>
-            {selectedFiles.map((file: File, index: any) => (
-              <div className='pdf-mobile-img'
-                key={index}>
-                <img
-                  src={file && URL.createObjectURL(file)}
-                  alt={file && file.name}
-                />
-                <p>{file && file.name}</p>
-              </div>
+            {selectedFiles && <div className='pdf-mobile-img'
+            >
+              <img
+                src={selectedFiles}
+                alt={selectedFiles.name}
+              />
+              <p>{selectedFiles && selectedFiles.name}</p>
+            </div>}
 
-            ))}
           </div>
         </div>
       </label>

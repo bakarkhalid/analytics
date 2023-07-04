@@ -7,29 +7,25 @@ interface Main {
 }
 
 const Mainn: React.FC<Main> = ({ selectedOption }) => {
-    // const [selectedFiles, setSelectedFiles] = useState<File[]>([]);
-    // const [currentStep, setCurrentStep] = useState<number>(1);
-    // const [getShow, setGetShow] = useState(false);
-    // const [elected, setElected] = useState("");
 
-    // const button = (button: boolean) => {
-    //     setGetShow(button);
-    //     setCurrentStep(3);
-    // };
-
-    // const handleSelectedFilesChange = (files: File[]) => {
-    //     setSelectedFiles(files);
-    //     setCurrentStep(currentStep + 1);
-    // };
-
-    // const handleOptionSelect = (option: any) => {
-    //     setElected(option);
-    // };
-
-    const [firstImage, setFirstImage] = useState<any>([])
-    const [secondImage, setSecondImage] = useState<any>([])
-    const [thirdImage, setThirdImage] = useState<any>([])
-
+    const [firstImage, setFirstImage] = useState<any>("")
+    const [secondImage, setSecondImage] = useState<any>("")
+    const [thirdImage, setThirdImage] = useState<any>("")
+    const handleImage = (e: any, name: string) => {
+        switch (name) {
+            case "first":
+                setFirstImage(URL.createObjectURL(e.target.files[0]))
+                break;
+            case "second":
+                setSecondImage(URL.createObjectURL(e.target.files[0]))
+                break;
+            case "third":
+                setThirdImage(URL.createObjectURL(e.target.files[0]))
+                break;
+            default:
+                break;
+        }
+    }
     return (
         <>
             <div className='chose-file-area'>
@@ -38,17 +34,37 @@ const Mainn: React.FC<Main> = ({ selectedOption }) => {
                     <div className="col">
                         <div className='document-block'>
                             <div className='upload-file'>
-                                <Uploader
-                                    selectedFiles={firstImage}
-                                    onSelectedFilesChange={(event) => {
-                                        const files = event.target.files;
-                                        if (files) {
-                                            const newFiles = [...firstImage, ...Array.from(files)];
-                                            setFirstImage(newFiles);
-                                        }
-                                        console.log(1)
-                                    }}
-                                />
+                                <label htmlFor="premiumPhoto1" className='label'>
+                                    <input className='inputHide' id="premiumPhoto1" type='file' onChange={(e) => handleImage(e, "first")} />
+                                    {firstImage ? <img src={firstImage} /> : 
+                                        <div className="file-area">
+                                        <div className="file-image">
+                                            <img src="assets/images/document-file.png" alt="document-file" />
+                                        </div>
+                                        <p>drag or click to select file</p>
+                                    </div>
+                                    }
+                                
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className='section-block'>
+                    <span className='detail-number'>Upload Telegram Chatjjj</span>
+                    <div className="col">
+                        <div className='document-block'>
+                            <div className='upload-file'>
+                                <label htmlFor="premiumPhoto2" className='label'>
+                                    <input className='inputHide' id="premiumPhoto2" type='file' onChange={(e) => handleImage(e, "second")} />
+                                    {secondImage ? <img src={secondImage} /> :   <div className="file-area">
+                                        <div className="file-image">
+                                            <img src="assets/images/document-file.png" alt="document-file" />
+                                        </div>
+                                        <p>drag or click to select file</p>
+                                    </div> }
+                                 
+                                </label>
                             </div>
                         </div>
                     </div>
@@ -58,37 +74,18 @@ const Mainn: React.FC<Main> = ({ selectedOption }) => {
                     <div className="col">
                         <div className='document-block'>
                             <div className='upload-file'>
-                                <Uploader
-                                    selectedFiles={secondImage}
-                                    onSelectedFilesChange={(event) => {
-                                        const files = event.target.files;
-                                        if (files) {
-                                            const newFiles = [...secondImage, ...Array.from(files)];
-                                            setSecondImage(newFiles);
-                                        }
-                                        console.log(2)
-                                    }}
-                                />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div className='section-block'>
-                    <span className='detail-number'>Upload Telegram Chat</span>
-                    <div className="col">
-                        <div className='document-block'>
-                            <div className='upload-file'>
-                                <Uploader
-                                    selectedFiles={thirdImage}
-                                    onSelectedFilesChange={(event) => {
-                                        const files = event.target.files;
-                                        if (files) {
-                                            const newFiles = [...thirdImage, ...Array.from(files)];
-                                            setThirdImage(newFiles);
-                                        }
-                                        console.log(3)
-                                    }}
-                                />
+                                <label htmlFor="premiumPhoto3" className='label'>
+                                    <input className='inputHide' id="premiumPhoto3" type='file' onChange={(e) => handleImage(e, "third")} />
+                                    {thirdImage ? <img src={thirdImage} /> : 
+                                      <div className="file-area">
+                                      <div className="file-image">
+                                          <img src="assets/images/document-file.png" alt="document-file" />
+                                      </div>
+                                      <p>drag or click to select file</p>
+                                  </div>
+                                    }
+                                  
+                                </label>
                             </div>
                         </div>
                     </div>

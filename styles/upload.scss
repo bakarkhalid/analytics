@@ -6,53 +6,117 @@
     justify-content: center;
     background-position: 100% 100%;
     background-size: cover;
+    position: relative;
     // padding: 50px 50px 50px 365px;
-
-    @media (max-width: 767px) {
-        padding: 20px 0;
-    }
 }
 
 .search-wrap {
     display: flex;
 
     .right-area {
-        width: 60%;
+        width: 65%;
         padding: 120px 0 30px;
         margin: 0 auto;
 
         @media (max-width: 1024px) {
             width: 68%;
-            padding:  60px 0 30px;
+            padding: 60px 15px 30px;
+        }
+
+        @media (max-width: 767px) {
+            width: 100%;
         }
 
         &.table-area {
             width: 68%;
+
+            @media (max-width: 767px) {
+                width: 100%;
+            }
         }
     }
 }
 
+.analytic-side-bar {
+    width: 30%;
+
+    @media (max-width: 767px) {
+        width: 0;
+    }
+}
+.inputHide{
+    display: none;
+}
+.label{
+    width: 100%;
+    min-height: 200px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 15px;
+}
 .side-bar {
     height: 100vh;
+    width: 100%;
     padding: 100px 0;
     background-color: rgba(45, 45, 45, 0.67);
     color: #fff;
-    width: 30%;
+    z-index: 1;
+    position: relative;
 
     @media (max-width: 1024px) {
         padding: 60px 0;
     }
 
+    @media (max-width: 768px) {
+        // display: none;
+        position: absolute;
+        top: 0;
+        left: -768px;
+        transition: all 0.4s ease-in-out;
+        width: 100%;
+    }
+
     .side-bar-heading {
         padding: 0 20px;
         text-align: center;
-        margin-bottom: 40px;
+        margin: 0 auto 40px auto;
+        max-width: 280px;
 
         h2 {
             font-size: 24px;
             line-height: 36px;
             font-weight: 700;
         }
+    }
+}
+
+.harmburger-menu {
+    display: none;
+    color: #fff;
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    font-size: 30px;
+    font-weight: 700;
+    z-index: 2;
+
+    @media screen and (max-width: 768px) {
+        display: block;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .mobile-side-bar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        right: 0;
+        bottom: 0;
+        display: block;
+        background: #1C1C1C;
     }
 }
 
@@ -93,6 +157,10 @@
     line-height: 1.1;
     padding: 40px 0 0;
 
+    @media (max-width: 767px) {
+        font-size: 24px;
+    }
+
     .error-text {
         color: #AF9E00;
         display: block;
@@ -119,7 +187,6 @@
     @media screen and (max-width: 767px) {
         width: 100%;
         padding: 0;
-        margin-bottom: 0;
     }
 
     .detail-number {
@@ -171,9 +238,9 @@
     background: rgba(65, 65, 65, 0.72);
     border: 1px solid #FFFFFF;
     border-radius: 6px;
-    height: 100%;
     margin-bottom: 15px;
-    padding: 40px 10px;
+    text-align: center;
+    height: 100%;
 }
 
 .language-block {
@@ -194,6 +261,12 @@
 }
 
 .file-area {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    padding: 20px;
+    cursor: pointer;
 
     p {
         color: #787878;
@@ -204,9 +277,4 @@
 
 .input-field {
     display: none;
-}
-
-.upload-file {
-    cursor: pointer;
-    text-align: center;
 }
