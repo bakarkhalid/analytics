@@ -1,27 +1,27 @@
 import React, { ReactElement, ReactNode } from "react";
-import {SearchIcon } from "@/icons";
+import { SearchIcon } from "@/icons";
 import Input from "../Input";
 
-interface ISearchbar{
+interface ISearchbar {
     text: ReactElement | ReactNode | string,
     className?: string;
     placeholder: string;
     type: string;
 }
 
-const Searchbar: React.FC<ISearchbar> = ({text, placeholder, type, className}) => {
+const Searchbar: React.FC<ISearchbar> = ({ text, placeholder, type, className }) => {
     return (
-        <div  className={`bar-holder ${className}`}>
+        <div className={`bar-holder ${className}`}>
             <p>{text}</p>
             <div className="field-holder">
-                <Input 
+                <Input
                     placeholder={placeholder}
                     type={type}
                 />
-                <button><SearchIcon/></button> 
+                <button><SearchIcon /></button>
             </div>
         </div>
     );
 }
- 
+
 export default Searchbar
