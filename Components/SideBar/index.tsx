@@ -33,9 +33,9 @@ const SideBar: React.FC<ISideBar> = ({ sideBarName, uploadFile, searchArea, anal
             </div>
 
             <ul className='side-bar-menu'>
-                <li className={activeMenu === "/UploadFiles" ? 'active' : ''} onClick={() => handleMenuClick(1)}><Link href="/UploadFiles"> <UploadIcon />  {uploadFile}</Link></li>
-                <li className={activeMenu === "#" ? 'active' : ''} onClick={() => handleMenuClick(2)}><Link href="#"><SearchIcon /> {searchArea}</Link></li>
-                <li className={activeMenu === "/Analytics" ? 'active' : ''} onClick={() => handleMenuClick(3)}><Link href="/Analytics"> <AnalyticsIcon /> {analyticsArea}</Link></li>
+                <li className={activeMenu === "/upload" ? 'active' : ''} onClick={() => handleMenuClick(1)}><Link href="/upload"> <UploadIcon />  {uploadFile}</Link></li>
+                <li className={activeMenu === "/search" ? 'active' : ''} onClick={() => handleMenuClick(2)}><Link href="/search"><SearchIcon /> {searchArea}</Link></li>
+                <li className={activeMenu === "/analytics" ? 'active' : ''} onClick={() => handleMenuClick(3)}><Link href="/analytics"> <AnalyticsIcon /> {analyticsArea}</Link></li>
             </ul>
         </div>
     )
